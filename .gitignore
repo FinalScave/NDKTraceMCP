@@ -6,4 +6,7 @@ mcp/server/__pycache__/
 mcp/server/.mypy_cache/
 mcp/server/.pytest_cache/
 *.pyc
-
+.idea
+.vscode
+.codex
+.claude

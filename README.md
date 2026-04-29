@@ -1,6 +1,6 @@
-# NDKTraceMCP
+# NDKTraceSkills
 
-NDKTraceMCP is a local toolchain for Android native crash restoration and AI-assisted analysis. The recommended workflow is a project-aware agent skill that runs a deterministic C++ CLI first and falls back to guided workspace inspection only when project resolution is incomplete. The repository is organized around three primary parts:
+NDKTraceSkills is a local toolchain for Android native crash restoration and AI-assisted analysis. The recommended workflow is a project-aware agent skill that runs a deterministic C++ CLI first and falls back to guided workspace inspection only when project resolution is incomplete. The repository is organized around three primary parts:
 
 - a C++ CLI in `cli/`
 - a shared core library in `cli/` that includes crash artifact parsing and symbolization helpers

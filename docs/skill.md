@@ -6,6 +6,14 @@ This page describes the Codex skill in `skills/android-native-crash-analysis/`.
 
 The skill tells the model when a task is really an Android native crash analysis task, routes deterministic work through the local CLI, and uses workspace inspection only when CLI project resolution is incomplete.
 
+## CLI Location
+
+The skill should resolve the CLI before running analysis commands. It prefers bundled executables under `skills/android-native-crash-analysis/bin/<platform>/`, then falls back to `NDKTRACE_CLI`, then `ndktrace-cli` from `PATH`, and finally local source checkout build outputs such as `cli/build/Debug/ndktrace-cli.exe` during development.
+
+Current bundled platform path:
+
+- Windows x64: `skills/android-native-crash-analysis/bin/windows-x64/ndktrace-cli.exe`
+
 ## Current Focus
 
 - trigger on tombstones, native backtraces, JNI crashes, and NDK crash triage requests

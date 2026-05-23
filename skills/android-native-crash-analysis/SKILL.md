@@ -7,6 +7,18 @@ description: Analyze Android native crashes through a CLI-first workflow, use AI
 
 Use this skill when the task involves tombstones, logcat traces, native backtraces, ANR/crash reports with native frames, or JNI/NDK failures on Android.
 
+## CLI Discovery
+
+- Resolve the CLI path before running any command.
+- Prefer the bundled executable under this skill directory when it exists:
+  - Windows x64: `bin/windows-x64/ndktrace-cli.exe`
+  - Linux x64: `bin/linux-x64/ndktrace-cli`
+  - macOS arm64: `bin/macos-arm64/ndktrace-cli`
+- If no bundled executable exists, use `NDKTRACE_CLI` when it points to an executable file.
+- If `NDKTRACE_CLI` is not available, use `ndktrace-cli` from `PATH`.
+- In a source checkout, use a local build output such as `cli/build/Debug/ndktrace-cli.exe` only as a development fallback.
+- Use the resolved absolute CLI path for `resolve-project`, `validate`, `restore`, and `scan-ndk`.
+
 ## Workflow
 
 - Collect the crash text, app/version context, ABI, and the richest available Android inputs: explicit NDK and symbol paths, or a `project_path` with optional module, variant, ABI, library name, and build hints.
